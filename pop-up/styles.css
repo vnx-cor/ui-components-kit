@@ -17,6 +17,7 @@ body {
 
 /* Semi-transparent background overlay */
 .modal {
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
@@ -25,6 +26,13 @@ body {
     background-color: rgba(0, 0, 0, 0.5);   /* Dimmed background */
     justify-content: center;
     align-items: center;
+
+    /* Hide by default */
+    opacity: 0;
+    visibility: hidden;
+
+    /* Smooth transition effect */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 /* The actual box styling */
@@ -37,6 +45,10 @@ body {
     text-align: center;
     position: relative;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+    /* Pop up modal transition's subtle animation */
+    transform: scale(0.9) translateY(-20px);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* Close "X" Icon Button */
@@ -50,5 +62,10 @@ body {
 
 /* Class to turn on the modal via JavaScript */
 .modal.show {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal.show .modal-content {
+    transform: scale(1) translateY(0);
 }
