@@ -1,3 +1,20 @@
+/* Reset / Default Style */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Semi-transparent background overlay */
 .modal {
     display: none;
@@ -21,3 +38,4 @@
     position: relative;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+
