@@ -1,0 +1,273 @@
+/* ==========================================================
+   CREAIT brand tokens
+   Primary: Dark Green  |  Secondary: #FFFFFF
+   Typeface: Montserrat (Bold / Semi-Bold / Regular)
+   ========================================================== */
+:root {
+  --green: #0f3d2e;
+  --green-hover: #16523f;
+  --green-deep: #0a2a20;
+  --green-tint: #eaf1ed;
+  --white: #ffffff;
+  --text: #24342d;
+  --radius: 22px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--text);
+  background: var(--white);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+}
+
+/* ---------- Submit button (page) ---------- */
+.submit-btn {
+  padding: 14px 40px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--green);
+  border: none;
+  border-radius: 999px;
+  transition: background 0.2s, transform 0.2s;
+}
+.submit-btn:hover {
+  background: var(--green-hover);
+  transform: translateY(-1px);
+}
+
+/* ---------- Overlay ---------- */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(10, 42, 32, 0.6);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s;
+}
+.modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ---------- Card ---------- */
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: 0 24px 60px rgba(10, 42, 32, 0.35);
+  transform: translateY(18px) scale(0.97);
+  transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+}
+.modal.is-open .modal-content {
+  transform: none;
+}
+.modal-content:focus {
+  outline: none;
+}
+
+/* ---------- Header: slanted edge echoes the tagline bubble ---------- */
+.modal-header {
+  position: relative;
+  padding: 36px 32px 58px;
+  text-align: center;
+  color: var(--white);
+  background: var(--green);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), 0 100%);
+}
+
+.creait-logo {
+  width: 30%;
+  height: 30%;
+  margin-bottom: 14px;
+}
+.bubble-icon .bubble {
+  fill: var(--white);
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Close ---------- */
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+.close-btn:focus-visible {
+  outline-color: var(--white);
+  outline-offset: 2px;
+}
+.close-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+/* ---------- Body ---------- */
+.modal-body {
+  padding: 0 32px;
+  margin-top: 12.5px;
+}
+.modal-body p {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.note {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-top: 20px;
+  padding: 16px 18px;
+  background: var(--green-tint);
+  border-left: 4px solid var(--green);
+  border-radius: 4px 14px 14px 4px;
+}
+.note svg {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  margin-top: 2px;
+  fill: none;
+  stroke: var(--green);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.note p {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--green);
+}
+
+/* ---------- Footer ---------- */
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 26px 32px 30px;
+}
+
+/* Small speech-bubble tagline */
+.tagline {
+  position: relative;
+  padding: 8px 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--green);
+  background: var(--green-tint);
+  border-radius: 12px;
+}
+.tagline::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  bottom: -7px;
+  border: 7px solid transparent;
+  border-top-color: var(--green-tint);
+  border-bottom: 0;
+}
+
+.done-btn {
+  padding: 13px 38px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--green);
+  border: none;
+  border-radius: 999px;
+  transition: background 0.2s, transform 0.2s;
+}
+.done-btn:hover {
+  background: var(--green-hover);
+  transform: translateY(-1px);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 480px) {
+  .modal-header {
+    padding: 32px 24px 54px;
+  }
+  .modal-body {
+    padding: 0 24px;
+  }
+  .modal-footer {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    padding: 24px;
+  }
+  .tagline {
+    align-self: center;
+  }
+  .tagline::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .done-btn {
+    width: 100%;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .modal,
+  .modal-content,
+  .submit-btn,
+  .done-btn {
+    transition: none;
+  }
+}
