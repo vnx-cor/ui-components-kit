@@ -9,4 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
     openBtn.addEventListener("click", () => {
         modal.classList.add("show");
     });
+
+    // Close function
+    const closePopup = () => {
+        modal.classList.remove("show");
+    }
+
+    // Hook up close elements
+    closeBtn.addEventListener("click", closePopup);
+    okBtn.addEventListener("click", closePopup);
 });
