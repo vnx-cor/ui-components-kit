@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-Up Message</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Trigger Button -->
+    <button id="openBtn">Submit Form</button>
+
+    <!-- Pop-up Background Overlay -->
+    <div id="popupModal" class="modal">
+        <!-- The actual Pop-up Box Content -->
+        <div class="modal-content">
+            <span id="closeBtn" class="close-icon">&times;</span>
+            <h2>Thank You for Contacting Us</h2>
+            <p>
+                Your form has been successfully submitted to our Support Team.<br><br>
+
+                We have received your information and will review it accordingly.<br><br>
+
+                Please check your inbox or spam/junk folder for the confirmation and
+                verification email regarding your submission.
+            </p>
+            <button id="okBtn">Done</button>
+        </div>
+    </div>
+</body>
+</html>
