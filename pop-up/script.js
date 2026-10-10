@@ -18,4 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Hook up close elements
     closeBtn.addEventListener("click", closePopup);
     okBtn.addEventListener("click", closePopup);
+
+    // Optional: Close pop-up if the user clicks anywhere outside the modal element
+    window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            closePopup();
+        }
+    });
 });
