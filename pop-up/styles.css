@@ -47,3 +47,8 @@ body {
     font-size: 24px;
     cursor: pointer;
 }
+
+/* Class to turn on the modal via JavaScript */
+.modal.show {
+    display: flex;
+}
