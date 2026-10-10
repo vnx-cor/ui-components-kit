@@ -17,7 +17,6 @@ body {
 
 /* Semi-transparent background overlay */
 .modal {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -33,7 +32,8 @@ body {
     background-color: white;
     padding: 24px;
     border-radius: 8px;
-    width: 300px;
+    width: 80%;
+    max-width: 500px;
     text-align: center;
     position: relative;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
